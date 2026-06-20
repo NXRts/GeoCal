@@ -39,7 +39,7 @@ Jalankan perintah berikut di terminal Anda:
 
 ### 1. Masuk ke Direktori Proyek
 ```bash
-cd "/home/nxrts/Program Koding/Geometric Calculator"
+cd "Geometric Calculator"
 ```
 
 ### 2. Instal Dependensi
