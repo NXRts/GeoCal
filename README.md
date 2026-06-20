@@ -1,50 +1,66 @@
-# Geometric Calculator
+# Geometric Calculator (Angular Version)
 
-A lightweight geometric calculator web app for instant area, perimeter, volume, and surface area calculations.
+A premium, interactive geometric calculator web application built with **Angular 18**, **TypeScript**, and **Reactive Forms**.
 
 ## Overview
 
-Geometric Calculator adalah aplikasi web ringan yang dirancang untuk menghitung properti dasar bentuk 2D dan 3D dengan cepat. Aplikasi ini memberikan hasil secara instan setelah pengguna mengisi parameter.
+Kalkulator Geometri Interaktif adalah aplikasi web modern yang menghitung properti geometris bentuk 2D (Lingkaran, Persegi Panjang, Segitiga) dan bentuk 3D (Bola, Tabung, Kubus) secara instan. Desainnya disempurnakan dengan tema *glassmorphism* gelap yang premium, visualisasi bentuk interaktif menggunakan SVG dinamis, dan sistem pencatatan riwayat kalkulasi.
 
-## Fitur
+## Fitur Unggulan
 
-- Hitung untuk bentuk 2D: lingkaran, persegi panjang, segitiga.
-- Hitung untuk bentuk 3D: bola, tabung, kubus.
-- Luas, keliling, volume, luas permukaan, dan diagonal.
-- Antarmuka responsif dan mudah dipakai.
-- Dijalankan langsung di browser tanpa backend.
+- **Visualisasi Geometri SVG Real-time**: Menampilkan grafik representasi SVG untuk setiap geometri yang merespon input ukuran Anda secara instan di layar.
+- **Riwayat Perhitungan**: Menyimpan daftar kalkulasi sebelumnya secara lokal (`localStorage`), lengkap dengan opsi salin hasil atau hapus item.
+- **Validasi Cerdas**: Validasi form responsif untuk mencegah kesalahan input (misalnya nilai negatif atau nol).
+- **Desain Premium Gelap**: Desain modern menggunakan gradien bersinar, efek *backdrop-filter blur*, serta mikro-animasi.
 
-## File Utama
+## Struktur Direktori Utama
 
-- `index.html` — halaman web utama.
-- `styles.css` — gaya tampilan.
-- `script.js` — logika kalkulator.
-- `LICENSE` — lisensi MIT.
+- `src/index.html` — Berkas HTML utama.
+- `src/main.ts` — Berkas inisialisasi / bootstrap aplikasi Angular.
+- `src/styles.css` — Gaya CSS global dan variabel tema.
+- `src/app/`
+  - `app.component.*` — Cangkang tata letak utama (Header, Grid Layout, Footer).
+  - `app.config.ts` — Konfigurasi aplikasi.
+  - `services/`
+    - `geometry.service.ts` — Logika matematika kalkulasi bentuk geometri.
+    - `history.service.ts` — Manajemen data riwayat kalkulasi di `localStorage`.
+  - `components/`
+    - `calculator/` — Form kalkulator dan render visual SVG dinamis.
+    - `history/` — Daftar riwayat perhitungan dan aksi salin/hapus.
+    - `instructions/` — Panduan langkah demi langkah penggunaan aplikasi.
 
-## Menjalankan Aplikasi
+---
 
-Aplikasi ini tidak memerlukan instalasi khusus. Cukup buka `index.html` di browser.
+## Cara Menjalankan Aplikasi
 
-Untuk server lokal sederhana, gunakan salah satu perintah berikut:
+Karena aplikasi ini dikembangkan menggunakan framework Angular, Anda perlu melakukan instalasi dependensi terlebih dahulu di komputer Anda (yang terhubung ke internet).
 
+Jalankan perintah berikut di terminal Anda:
+
+### 1. Masuk ke Direktori Proyek
 ```bash
-python3 -m http.server 8000
+cd "/home/nxrts/Program Koding/Geometric Calculator"
 ```
 
-atau jika menggunakan Node.js:
-
+### 2. Instal Dependensi
 ```bash
-npx serve .
+npm install
 ```
 
-Kemudian buka `http://localhost:8000`.
+### 3. Jalankan Server Pengembangan
+```bash
+npm start
+```
+*Atau:*
+```bash
+npx ng serve
+```
 
-## Penggunaan
+### 4. Buka Aplikasi di Browser
+Buka tautan berikut di browser Anda:
+[http://localhost:4200](http://localhost:4200)
 
-1. Pilih bentuk geometri dari menu.
-2. Masukkan parameter seperti jari-jari, lebar, tinggi, atau panjang sisi.
-3. Klik tombol `Hitung`.
-4. Hasil akan muncul di panel hasil.
+---
 
 ## Lisensi
 
