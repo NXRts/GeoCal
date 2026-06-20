@@ -1,0 +1,59 @@
+<div class="history-card">
+  <div class="history-header">
+    <h2>Riwayat Perhitungan</h2>
+    @if (historyItems.length > 0) {
+      <button class="btn-clear-all" (click)="clearAll()">Hapus Semua</button>
+    }
+  </div>
+
+  @if (historyItems.length > 0) {
+    <div class="history-list">
+      @for (item of historyItems; track item.id) {
+        <div class="history-item-card" [attr.data-shape]="item.shapeKey">
+          <div class="item-meta">
+            <span class="shape-badge" [class]="item.shapeKey">{{ item.shapeLabel }}</span>
+            <span class="timestamp">{{ item.timestamp }}</span>
+          </div>
+
+          <div class="item-details">
+            <div class="inputs-snapshot">
+              <strong>Input:</strong>
+              <div class="snapshot-tags">
+                @for (input of item.inputs; track input.label) {
+                  <span class="snapshot-tag">{{ input.label.split(' ')[0] }}: <strong>{{ input.value }}</strong></span>
+                }
+              </div>
+            </div>
+
+            <div class="results-snapshot">
+              @for (result of item.results; track result) {
+                <p class="snapshot-result-line">{{ result }}</p>
+              }
+            </div>
+          </div>
+
+          <div class="item-actions">
+            <button 
+              class="btn-action btn-copy" 
+              (click)="copyToClipboard(item)" 
+              [title]="copiedId === item.id ? 'Tersalin!' : 'Salin hasil ke clipboard'"
+            >
+              {{ copiedId === item.id ? '✓ Tersalin' : '📋 Salin' }}
+            </button>
+            <button 
+              class="btn-action btn-delete" 
+              (click)="deleteItem(item.id)" 
+              title="Hapus kalkulasi ini"
+            >
+              ✕ Hapus
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  } @else {
+    <div class="empty-state">
+      <p>Belum ada riwayat perhitungan pada sesi ini.</p>
+    </div>
+  }
+</div>
