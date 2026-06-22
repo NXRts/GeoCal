@@ -11,7 +11,9 @@
       @for (item of historyItems; track item.id) {
         <div class="history-item-card" [attr.data-shape]="item.shapeKey">
           <div class="item-meta">
-            <span class="shape-badge" [class]="item.shapeKey">{{ item.shapeLabel }}</span>
+            <span class="shape-badge" [class]="item.shapeKey">{{
+              item.shapeLabel
+            }}</span>
             <span class="timestamp">{{ item.timestamp }}</span>
           </div>
 
@@ -20,7 +22,10 @@
               <strong>Input:</strong>
               <div class="snapshot-tags">
                 @for (input of item.inputs; track input.label) {
-                  <span class="snapshot-tag">{{ input.label.split(' ')[0] }}: <strong>{{ input.value }}</strong></span>
+                  <span class="snapshot-tag"
+                    >{{ input.label.split(" ")[0] }}:
+                    <strong>{{ input.value }}</strong></span
+                  >
                 }
               </div>
             </div>
@@ -33,16 +38,18 @@
           </div>
 
           <div class="item-actions">
-            <button 
-              class="btn-action btn-copy" 
-              (click)="copyToClipboard(item)" 
-              [title]="copiedId === item.id ? 'Tersalin!' : 'Salin hasil ke clipboard'"
+            <button
+              class="btn-action btn-copy"
+              (click)="copyToClipboard(item)"
+              [title]="
+                copiedId === item.id ? 'Tersalin!' : 'Salin hasil ke clipboard'
+              "
             >
-              {{ copiedId === item.id ? '✓ Tersalin' : '📋 Salin' }}
+              {{ copiedId === item.id ? "✓ Tersalin" : "📋 Salin" }}
             </button>
-            <button 
-              class="btn-action btn-delete" 
-              (click)="deleteItem(item.id)" 
+            <button
+              class="btn-action btn-delete"
+              (click)="deleteItem(item.id)"
               title="Hapus kalkulasi ini"
             >
               ✕ Hapus

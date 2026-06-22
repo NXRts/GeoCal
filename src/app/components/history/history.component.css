@@ -98,12 +98,36 @@
 }
 
 /* Badge colors based on shape */
-.shape-badge.circle { background: rgba(59, 130, 246, 0.15); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.25); }
-.shape-badge.rectangle { background: rgba(16, 185, 129, 0.15); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.25); }
-.shape-badge.triangle { background: rgba(245, 158, 11, 0.15); color: #fde047; border: 1px solid rgba(245, 158, 11, 0.25); }
-.shape-badge.sphere { background: rgba(124, 58, 237, 0.15); color: #c084fc; border: 1px solid rgba(124, 58, 237, 0.25); }
-.shape-badge.cylinder { background: rgba(219, 39, 119, 0.15); color: #f472b6; border: 1px solid rgba(219, 39, 119, 0.25); }
-.shape-badge.cube { background: rgba(13, 148, 136, 0.15); color: #2dd4bf; border: 1px solid rgba(13, 148, 136, 0.25); }
+.shape-badge.circle {
+  background: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+.shape-badge.rectangle {
+  background: rgba(16, 185, 129, 0.15);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+.shape-badge.triangle {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fde047;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+.shape-badge.sphere {
+  background: rgba(124, 58, 237, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(124, 58, 237, 0.25);
+}
+.shape-badge.cylinder {
+  background: rgba(219, 39, 119, 0.15);
+  color: #f472b6;
+  border: 1px solid rgba(219, 39, 119, 0.25);
+}
+.shape-badge.cube {
+  background: rgba(13, 148, 136, 0.15);
+  color: #2dd4bf;
+  border: 1px solid rgba(13, 148, 136, 0.25);
+}
 
 .timestamp {
   font-size: 0.8rem;

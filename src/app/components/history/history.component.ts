@@ -1,14 +1,14 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HistoryService, HistoryItem } from '../../services/history.service';
-import { Subscription } from 'rxjs';
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { HistoryService, HistoryItem } from "../../services/history.service";
+import { Subscription } from "rxjs";
 
 @Component({
-  selector: 'app-history',
+  selector: "app-history",
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './history.component.html',
-  styleUrls: ['./history.component.css']
+  templateUrl: "./history.component.html",
+  styleUrls: ["./history.component.css"],
 })
 export class HistoryComponent implements OnInit, OnDestroy {
   historyItems: HistoryItem[] = [];
@@ -18,9 +18,11 @@ export class HistoryComponent implements OnInit, OnDestroy {
   constructor(private historyService: HistoryService) {}
 
   ngOnInit(): void {
-    this.historySubscription = this.historyService.getHistory().subscribe(items => {
-      this.historyItems = items;
-    });
+    this.historySubscription = this.historyService
+      .getHistory()
+      .subscribe((items) => {
+        this.historyItems = items;
+      });
   }
 
   ngOnDestroy(): void {
@@ -32,25 +34,32 @@ export class HistoryComponent implements OnInit, OnDestroy {
   }
 
   clearAll(): void {
-    if (confirm('Apakah Anda yakin ingin menghapus seluruh riwayat perhitungan?')) {
+    if (
+      confirm("Apakah Anda yakin ingin menghapus seluruh riwayat perhitungan?")
+    ) {
       this.historyService.clearHistory();
     }
   }
 
   copyToClipboard(item: HistoryItem): void {
-    const inputsStr = item.inputs.map(i => `${i.label}: ${i.value}`).join(', ');
-    const resultsStr = item.results.join('\n');
+    const inputsStr = item.inputs
+      .map((i) => `${i.label}: ${i.value}`)
+      .join(", ");
+    const resultsStr = item.results.join("\n");
     const textToCopy = `=== Kalkulasi ${item.shapeLabel} ===\nInput: ${inputsStr}\nHasil:\n${resultsStr}\n=========================`;
 
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(textToCopy).then(() => {
-        this.copiedId = item.id;
-        setTimeout(() => {
-          this.copiedId = null;
-        }, 2000);
-      }).catch(err => {
-        console.error('Gagal menyalin teks: ', err);
-      });
+      navigator.clipboard
+        .writeText(textToCopy)
+        .then(() => {
+          this.copiedId = item.id;
+          setTimeout(() => {
+            this.copiedId = null;
+          }, 2000);
+        })
+        .catch((err) => {
+          console.error("Gagal menyalin teks: ", err);
+        });
     }
   }
 }

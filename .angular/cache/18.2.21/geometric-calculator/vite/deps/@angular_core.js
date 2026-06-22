@@ -460,7 +460,7 @@ import {
   ɵɵtwoWayProperty,
   ɵɵvalidateIframeAttribute,
   ɵɵviewQuery,
-  ɵɵviewQuerySignal
+  ɵɵviewQuerySignal,
 } from "./chunk-7XA6G6KX.js";
 import "./chunk-S35MAB2V.js";
 export {
@@ -927,6 +927,6 @@ export {
   ɵɵtwoWayProperty,
   ɵɵvalidateIframeAttribute,
   ɵɵviewQuery,
-  ɵɵviewQuerySignal
+  ɵɵviewQuerySignal,
 };
 //# sourceMappingURL=@angular_core.js.map
